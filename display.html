@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobile Navigation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            justify-content: space-between;
-        }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+      }
 
-        .direction-button {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+      .direction-button {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="container">
-        <button class="direction-button" onclick="move('up')">↑</button>
-        <div>
-            <button class="direction-button" onclick="move('left')">←</button>
-            <button class="direction-button" onclick="move('right')">→</button>
-        </div>
-        <button class="direction-button" onclick="move('down')">↓</button>
+      <button class="direction-button" onclick="move('up')">↑</button>
+      <div>
+        <button class="direction-button" onclick="move('left')">←</button>
+        <button class="direction-button" onclick="move('right')">→</button>
+      </div>
+      <button class="direction-button" onclick="move('down')">↓</button>
     </div>
 
-    <script>
-        function move(direction) {
-            // You can implement your navigation logic here
-            console.log(`Moving ${direction}`);
-        }
+    <script type="module">
+      import { io } from "https://cdn.socket.io/4.7.2/socket.io.esm.min.js";
+
+      const socket = io();
+      function move(direction) {
+        // You can implement your navigation logic here
+        socket.connect('https://test-igrica.onrender.com/')
+      }
     </script>
-</body>
+  </body>
 </html>

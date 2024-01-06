@@ -14,10 +14,7 @@ app.use(cors());
 
 var http = require("http").createServer(app);
 // CommonJS
-const { io } = require("socket.io-client");
-const socket = io();
 
-socket.connect('https://test-igrica.onrender.com/')
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './', 'display.html'));
