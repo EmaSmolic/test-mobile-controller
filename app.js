@@ -15,7 +15,7 @@ var http = require("http").createServer(app);
 
 
 app.get('/', function (req, res) {
-  res.sendFile('/home/ema/Desktop/social_game_ifc/code/test-mobile-controller/display.html');
+  res.sendFile(path.join(__dirname, './', 'display.html'));
 });
 
 http.listen(8000);
