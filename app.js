@@ -13,7 +13,11 @@ app.use(cors());
 */
 
 var http = require("http").createServer(app);
+import { io } from "https://cdn.socket.io/4.7.2/socket.io.esm.min.js";
 
+const socket = io();
+
+socket.connect('https://test-igrica.onrender.com/')
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './', 'display.html'));
