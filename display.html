@@ -15,6 +15,7 @@
         console.log(direction)
         socket.connect("https://test-igrica.onrender.com/");
       }
+      document.querySelector("#arrow").addEventListener("click", foo);
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,7 +47,7 @@
 
   <body>
     <div class="container">
-      <button class="direction-button" onclick="move('up')">↑</button>
+      <button class="direction-button" id="arrow">↑</button>
       <div>
         <button class="direction-button" onclick="move('left')">←</button>
         <button class="direction-button" onclick="move('right')">→</button>
