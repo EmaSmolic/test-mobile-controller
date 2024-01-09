@@ -16,7 +16,10 @@
         socket.connect("https://test-igrica.onrender.com/");
         console.log(socket)
       }
+      
       document.querySelector("#arrow").addEventListener("click", move);
+    
+      socket.on("hello", () => { alert('HELLO') });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
