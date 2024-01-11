@@ -12,14 +12,16 @@
 
       var socket = io("https://test-igrica.onrender.com/", connectionOptions);
       function move(direction) {
-        console.log(direction)
+        console.log(direction);
         socket.connect("https://test-igrica.onrender.com/");
-        console.log(socket)
+        console.log(socket);
       }
-      
+
       document.querySelector("#arrow").addEventListener("click", move);
-    
-      socket.on("hi", () => { alert('HELLO') });
+
+      socket.on("hello_ctrlr", () => {
+        alert("I am a controller");
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,7 +60,5 @@
       </div>
       <button class="direction-button" onclick="move('down')">↓</button>
     </div>
-
-    
   </body>
 </html>
