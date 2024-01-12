@@ -12,7 +12,7 @@
       var socket = io("https://test-igrica.onrender.com/", connectionOptions);
 
       socket.on("hi", () => {
-        socket.emit("hello_from_ctrlr", "test_code");
+        socket.emit("hello_from_ctrlr", "test_code", (response) => console.log(response));
       });
 
       function move(direction) {
